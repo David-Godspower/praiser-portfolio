@@ -3,34 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Praiser FAWOLE | Premium Social Media Strategist</title>
+    <title>Praiser FAWOLE | Social Media Strategist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="img/praise.png" />
 
     <style>
-      /* ================= DESIGN VARIABLE TOKENS ================= */
       :root {
-        --bg: #050505;
-        --card: #0e0e10;
-        --border: rgba(255, 255, 255, 0.05);
-        --border-glow: rgba(139, 92, 246, 0.25);
+        --bg: #060606;
+        --card: #101014;
         --text: #f8fafc;
-        --light: #94a3b8;
-        --accent: #8b5cf6; /* Royal Purple Accent */
-        --accent-glow: rgba(139, 92, 246, 0.4);
+        --light: #9ca3af;
+        --border: rgba(255, 255, 255, 0.06);
+
+        /* Better brand color for strategist brand */
+        --accent: #7c3aed;
+        --accent-2: #a855f7;
+
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
       }
 
-      /* ================= GLOBAL RESET ================= */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         scroll-behavior: smooth;
+        max-width: 100%;
       }
 
       body {
@@ -38,7 +42,22 @@
         background: var(--bg);
         color: var(--text);
         overflow-x: hidden;
+        width: 100%;
         -webkit-font-smoothing: antialiased;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right,
+            rgba(124, 58, 237, 0.15),
+            transparent 25%),
+          radial-gradient(circle at bottom left,
+            rgba(168, 85, 247, 0.08),
+            transparent 30%);
+        z-index: -1;
       }
 
       a {
@@ -46,284 +65,279 @@
         color: inherit;
       }
 
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
       section {
-        padding: 120px 10%;
-        position: relative;
+        padding: 110px 10%;
       }
 
       .section-title {
         font-family: "Montserrat", sans-serif;
         font-size: 2.8rem;
-        margin-bottom: 16px;
+        line-height: 1.1;
+        margin-bottom: 15px;
         font-weight: 900;
-        line-height: 1.2;
-        text-transform: uppercase;
-        letter-spacing: -0.5px;
       }
 
       .section-title span {
-        color: var(--accent);
+        color: var(--accent-2);
       }
 
       .section-subtitle {
         color: var(--light);
-        max-width: 650px;
+        max-width: 700px;
         line-height: 1.8;
         margin-bottom: 60px;
-        font-size: 1.05rem;
       }
 
-      /* ================= GLASSMORPHIC NAVBAR ================= */
+      /* NAVBAR */
+
       nav {
-        width: 100%;
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1000;
+        width: 100%;
+        z-index: 999;
         padding: 20px 10%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        background: rgba(5, 5, 5, 0.75);
+        justify-content: space-between;
+
+        background: rgba(6, 6, 6, 0.82);
         backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+
         border-bottom: 1px solid var(--border);
       }
 
       .logo {
         font-family: "Montserrat", sans-serif;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: 900;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
       }
 
       .logo span {
-        color: var(--accent);
+        color: var(--accent-2);
       }
 
       .nav-links {
         display: flex;
+        gap: 35px;
         align-items: center;
-        gap: 40px;
       }
 
       .nav-links a {
         color: var(--light);
-        transition: 0.2s ease;
-        font-size: 0.9rem;
-        font-weight: 500;
+        font-size: 0.92rem;
+        transition: 0.3s ease;
       }
 
-      .nav-links a:hover {
-        color: var(--text);
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
       }
 
-      /* ================= BUTTON COMPONENTS ================= */
+      .menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* BUTTONS */
+
       .btn {
-        padding: 16px 32px;
-        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        border-radius: 14px;
         font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        display: inline-block;
-        text-align: center;
+        transition: 0.35s ease;
       }
 
       .primary-btn {
-        background: var(--accent);
-        color: #fff;
-        border: 1px solid transparent;
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent-2)
+        );
+
+        color: white;
       }
 
       .primary-btn:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 30px var(--accent-glow);
+        box-shadow:
+          0 15px 30px rgba(124, 58, 237, 0.35);
       }
 
       .secondary-btn {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.03);
       }
 
       .secondary-btn:hover {
-        border-color: var(--accent);
-        color: #fff;
-        background: rgba(139, 92, 246, 0.05);
+        border-color: rgba(168, 85, 247, 0.5);
+        transform: translateY(-4px);
       }
 
-      /* ================= HERO ARCHITECTURE ================= */
+      /* HERO */
+
       .hero {
         min-height: 100vh;
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: 1.1fr 0.9fr;
         align-items: center;
-        gap: 60px;
+        gap: 70px;
+        width: 100%;
         padding-top: 140px;
       }
 
       .hero-text h3 {
-        color: var(--accent);
+        color: var(--accent-2);
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
         font-size: 0.85rem;
-        font-weight: 700;
       }
 
       .hero-text h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: 4rem;
-        line-height: 1.1;
-        margin-bottom: 24px;
+        font-size: 4.2rem;
+        line-height: 1.05;
+        margin-bottom: 25px;
         font-weight: 900;
-        letter-spacing: -1px;
+      }
+
+      .hero-text h1 span {
+        color: var(--accent-2);
       }
 
       .hero-text p {
         color: var(--light);
-        line-height: 1.8;
+        line-height: 1.9;
         margin-bottom: 35px;
         max-width: 620px;
-        font-size: 1.05rem;
+        font-size: 1.04rem;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
       }
 
       .hero-image {
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
       }
 
       .hero-image img {
         width: 100%;
-        max-width: 380px;
-        border-radius: 24px;
-        object-fit: cover;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 420px;
+        border-radius: 28px;
+        border: 1px solid var(--border);
         position: relative;
         z-index: 2;
-        filter: grayscale(10%) contrast(105%);
+        box-shadow: var(--shadow);
       }
 
       .glow {
-        width: 400px;
-        height: 400px;
+        width: 280px;
+        height: 280px;
         background: var(--accent);
-        filter: blur(140px);
         position: absolute;
-        opacity: 0.25;
-        z-index: 1;
+        filter: blur(130px);
+        opacity: 0.22;
       }
 
-      /* ================= METRICS / RESULTS WITH PREMIUM HOVERS ================= */
+      /* RESULTS */
+
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 24px;
-        margin-top: 40px;
       }
 
       .stat-card {
-        background: var(--card);
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--border);
-        padding: 45px 35px;
-        border-radius: 20px;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 24px;
+        padding: 40px 30px;
+        transition: 0.4s ease;
       }
 
       .stat-card:hover {
         transform: translateY(-8px);
-        border-color: var(--border-glow);
-        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
-        box-shadow:
-          0 20px 40px rgba(0, 0, 0, 0.4),
-          0 0 25px rgba(139, 92, 246, 0.1);
+        border-color: rgba(168, 85, 247, 0.3);
+        background: rgba(255,255,255,0.04);
       }
 
       .stat-card h3 {
+        font-size: 3rem;
+        margin-bottom: 10px;
         font-family: "Montserrat", sans-serif;
-        font-size: 3.2rem;
-        color: #fff;
-        margin-bottom: 8px;
-        font-weight: 800;
-        line-height: 1;
       }
 
       .stat-card p {
         color: var(--light);
-        font-size: 0.95rem;
-        font-weight: 500;
       }
 
-      /* ================= NARRATIVE ABOUT SECTION ================= */
+      /* ABOUT */
+
       .about {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 80px;
+        grid-template-columns: 1fr 0.85fr;
+        gap: 70px;
         align-items: center;
       }
 
       .about-content h4 {
-        color: var(--accent);
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
+        color: var(--accent-2);
         margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
-      .about p {
+      .about-content p {
         color: var(--light);
-        line-height: 1.8;
+        line-height: 1.9;
         margin-bottom: 22px;
-        font-size: 1rem;
-        text-align: justify;
       }
 
       .about-box {
-        background: linear-gradient(145deg, #0e0e10 0%, #070708 100%);
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--border);
-        padding: 50px 40px;
-        border-radius: 24px;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .about-box:hover {
-        border-color: var(--border-glow);
-        box-shadow:
-          0 20px 40px rgba(0, 0, 0, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        border-radius: 26px;
+        padding: 45px;
       }
 
       .about-box h3 {
         font-family: "Montserrat", sans-serif;
-        color: #fff;
-        margin-bottom: 30px;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        margin-bottom: 28px;
       }
 
       .focus-item {
-        margin-bottom: 16px;
-        color: var(--text);
-        font-size: 0.95rem;
-        font-weight: 500;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
+        margin-bottom: 18px;
+        color: #e5e7eb;
       }
 
       .focus-item::before {
         content: "";
-        width: 6px;
-        height: 6px;
-        background: var(--accent);
+        width: 7px;
+        height: 7px;
         border-radius: 50%;
+        background: var(--accent-2);
       }
 
-      /* ================= CORE SERVICES WITH PREMIUM HOVERS ================= */
+      /* SERVICES */
+
       .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -331,453 +345,584 @@
       }
 
       .service-card {
-        background: var(--card);
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--border);
-        padding: 45px 35px;
-        border-radius: 20px;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 22px;
+        padding: 40px 30px;
+        transition: 0.35s ease;
       }
 
       .service-card:hover {
         transform: translateY(-8px);
-        border-color: var(--border-glow);
-        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
-        box-shadow:
-          0 20px 40px rgba(0, 0, 0, 0.4),
-          0 0 25px rgba(139, 92, 246, 0.15);
+        border-color: rgba(168, 85, 247, 0.35);
       }
 
       .service-card h3 {
+        margin-bottom: 14px;
         font-family: "Montserrat", sans-serif;
-        margin-bottom: 16px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: color 0.3s ease;
-      }
-
-      .service-card:hover h3 {
-        color: #fff;
       }
 
       .service-card p {
         color: var(--light);
-        line-height: 1.7;
-        font-size: 0.9rem;
+        line-height: 1.8;
       }
 
-      /* ================= CHRONOLOGICAL TIMELINE WITH HOVERS ================= */
+      /* EXPERIENCE */
+
       .timeline {
         position: relative;
-        margin-top: 50px;
-        padding-left: 40px;
-        border-left: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 40px;
+        padding-left: 35px;
+        border-left: 1px solid rgba(255,255,255,0.08);
       }
 
       .timeline-card {
         position: relative;
-        margin-bottom: 45px;
-      }
-
-      .timeline-card:last-child {
-        margin-bottom: 0;
+        margin-bottom: 35px;
       }
 
       .timeline-dot {
-        width: 12px;
-        height: 12px;
-        background: var(--accent);
-        border-radius: 50%;
         position: absolute;
-        left: -46.5px;
-        top: 6px;
-        box-shadow: 0 0 15px var(--accent);
-        transition: transform 0.3s ease;
+        left: -42px;
+        top: 5px;
+
+        width: 14px;
+        height: 14px;
+
+        border-radius: 50%;
+        background: var(--accent-2);
+
+        box-shadow: 0 0 15px rgba(168,85,247,0.8);
       }
 
       .timeline-content {
-        background: var(--card);
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--border);
-        padding: 40px;
-        border-radius: 20px;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 22px;
+        padding: 35px;
+        transition: 0.35s ease;
       }
 
       .timeline-content:hover {
-        transform: translateY(-6px);
-        border-color: var(--border-glow);
-        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      }
-
-      .timeline-card:hover .timeline-dot {
-        transform: scale(1.3);
+        transform: translateY(-5px);
+        border-color: rgba(168, 85, 247, 0.3);
       }
 
       .timeline-date {
-        color: var(--accent);
-        display: inline-block;
-        margin-bottom: 12px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        text-transform: uppercase;
+        color: var(--accent-2);
+        font-size: 0.84rem;
         letter-spacing: 1px;
+        margin-bottom: 12px;
+        display: inline-block;
+        font-weight: 700;
       }
 
       .timeline-content h3 {
+        margin-bottom: 8px;
         font-family: "Montserrat", sans-serif;
-        font-size: 1.35rem;
-        margin-bottom: 6px;
-        font-weight: 700;
       }
 
       .timeline-content h4 {
         color: var(--light);
-        margin-bottom: 20px;
-        font-weight: 500;
+        margin-bottom: 18px;
         font-size: 0.95rem;
       }
 
       .timeline-content p {
         color: var(--light);
-        line-height: 1.7;
-        font-size: 0.95rem;
+        line-height: 1.8;
       }
 
-      /* ================= HIGH CONVERSION CTA ================= */
-      .cta-container {
-        padding: 60px 0;
-      }
+      /* CTA */
 
       .cta {
-        background: linear-gradient(
-          135deg,
-          rgba(139, 92, 246, 0.08) 0%,
-          rgba(5, 5, 5, 0) 100%
-        );
-        border: 1px solid rgba(139, 92, 246, 0.15);
-        padding: 80px 40px;
-        border-radius: 28px;
         text-align: center;
-        position: relative;
-        overflow: hidden;
-        transition: border-color 0.4s ease;
-      }
+        padding: 80px 40px;
+        border-radius: 30px;
 
-      .cta:hover {
-        border-color: rgba(139, 92, 246, 0.3);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.12),
+            rgba(0,0,0,0)
+          );
+
+        border: 1px solid rgba(168, 85, 247, 0.18);
       }
 
       .cta h2 {
-        font-family: "Montserrat", sans-serif;
         font-size: 2.8rem;
-        font-weight: 900;
-        margin-bottom: 16px;
-        text-transform: uppercase;
+        margin-bottom: 18px;
+        font-family: "Montserrat", sans-serif;
       }
 
       .cta p {
-        max-width: 620px;
-        margin: auto;
+        max-width: 650px;
+        margin: auto auto 30px;
+        line-height: 1.9;
         color: var(--light);
-        line-height: 1.7;
-        margin-bottom: 35px;
-        font-size: 1.05rem;
       }
 
-      /* ================= CONVERTING CONTACT ENGINE ================= */
+      /* CONTACT */
+
       .contact-links {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-        margin-top: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
       }
 
       .contact-links a {
-        background: var(--card);
-        border: 1px solid var(--border);
-        padding: 20px;
-        border-radius: 14px;
+        padding: 22px;
+        border-radius: 18px;
         text-align: center;
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--border);
+
+        transition: 0.35s ease;
       }
 
       .contact-links a:hover {
-        border-color: var(--accent);
-        color: #fff;
-        transform: translateY(-4px);
-        background: rgba(139, 92, 246, 0.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transform: translateY(-6px);
+        border-color: rgba(168, 85, 247, 0.35);
       }
 
-      /* ================= SYSTEM FOOTER ================= */
       footer {
-        text-align: center;
         padding: 40px;
+        text-align: center;
         border-top: 1px solid var(--border);
-        color: #555;
-        font-size: 0.85rem;
-        font-weight: 500;
+        color: #6b7280;
       }
 
-      /* ================= VIEWPORT ADAPTATION ================= */
+      /* SCROLL ANIMATION */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* MOBILE */
+
       @media (max-width: 1024px) {
+        body{
+          width: 100%;
+          overflow: hidden;
+        }
         .hero,
         .about {
           grid-template-columns: 1fr;
-          gap: 60px;
+          width: 100%;
+          overflow: hidden;
         }
+
         .hero-text {
           text-align: center;
         }
+
         .hero-text p {
-          margin-left: auto;
-          margin-right: auto;
+          margin-inline: auto;
         }
+
         .hero-image {
           order: -1;
         }
-        .section-title {
-          font-size: 2.2rem;
+
+        .hero-text h1 {
+          font-size: 3.2rem;
         }
       }
 
       @media (max-width: 768px) {
-        .nav-links {
-          display: none;
+        body{
+          width: 100%;
+        }
+        .hero, .about{
+          width: 100%;
+          overflow-x: hidden;
         }
         section {
-          padding: 80px 6%;
+          padding: 90px 6%;
         }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 85px;
+          right: 6%;
+          width: 250px;
+
+          background: #111114;
+          border: 1px solid var(--border);
+
+          flex-direction: column;
+          align-items: flex-start;
+
+          padding: 25px;
+
+          border-radius: 18px;
+
+          display: none;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
         .hero-text h1 {
           font-size: 2.6rem;
         }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
         .cta h2 {
           font-size: 2rem;
         }
       }
     </style>
   </head>
+
   <body>
+
+    <!-- NAV -->
+
     <nav>
       <div class="logo">Praiser<span>.</span></div>
-      <div class="nav-links">
+
+      <div class="menu-btn" id="menuBtn">☰</div>
+
+      <div class="nav-links" id="navLinks">
         <a href="#results">Results</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#experience">Experience</a>
+
+        <!-- ADD CALENDLY LINK HERE -->
         <a
-          href="#"
+          href="#contact"
           class="btn primary-btn"
-          style="padding: 10px 20px; font-size: 0.85rem"
-          >Book Strategy Call</a
+          style="color: #fff; background: #5e72e4; border: 1px solid #5e72e4;"
         >
+          Book Strategy Call
+        </a>
       </div>
     </nav>
 
+    <!-- HERO -->
+
     <section class="hero">
-      <div class="hero-text">
-        <h3>Social Media Strategist & Creator</h3>
-        <h1>Helping Brands Build Visibility & <span>Unlimited Growth</span></h1>
+
+      <div class="hero-text reveal">
+        <h3>Social Media Strategist & Content Writer</h3>
+
+        <h1>
+          Helping Brands Build
+          Visibility &
+          <span>Consistent Growth</span>
+        </h1>
+
         <p>
-          I help brands, coaches, entrepreneurs, and service providers transform
-          scattered content frameworks into authoritative, profit-producing
-          online operations through consistency-driven strategy execution.
+          I help founders, coaches, entrepreneurs, and personal brands grow
+          through content strategy, profile optimization, and systems that turn
+          attention into real engagement and client opportunities.
         </p>
-        <div class="btn-group" style="display: flex; gap: 20px; wrap: wrap">
-          <a href="#" class="btn primary-btn">Book a Strategy Call</a>
+
+        <div class="btn-group">
+          <a href="#contact" class="btn primary-btn">
+            Book a Strategy Call
+          </a>
+
           <a
-            href="https://drive.google.com/drive/folders/12BY7JqprJ7ATp8s1B6eFnH1dSCxRJOsB"
+            href="Praise.html"
             target="_blank"
             class="btn secondary-btn"
-            >View Live Portfolio</a
           >
+            View my Resume
+          </a>
         </div>
       </div>
-      <div class="hero-image">
+
+      <div class="hero-image reveal">
         <div class="glow"></div>
-        <img src="img/praise.png" alt="Praiser Fawole Portrait" />
+
+        <!-- USE HER REAL IMAGE -->
+        <img src="img/praise.png" alt="Praiser FAWOLE" />
       </div>
     </section>
 
-    <section id="results">
-      <h2 class="section-title">Verified <span>Results</span></h2>
+    <!-- RESULTS -->
+
+    <section id="results" class="reveal">
+      <h2 class="section-title">
+        Real <span>Results</span>
+      </h2>
+
       <p class="section-subtitle">
-        Strategic placement and community engineering backed directly by clear,
-        measurable performance metrics—capturing organic traction from
-        decision-makers at prominent institutions such as
-        <strong>Cowrywise, Shopify, and Fiverr</strong>.
+        Organic growth backed by strategy, consistency, and audience-focused
+        content systems.
       </p>
 
       <div class="stats-grid">
+
         <div class="stat-card">
           <h3 class="counter" data-target="16139" data-suffix="+">0</h3>
           <p>Organic Impressions</p>
         </div>
+
         <div class="stat-card">
           <h3 class="counter" data-target="150" data-suffix="+">0</h3>
-          <p>Profile Visits Generated</p>
+          <p>Profile Visits</p>
         </div>
+
         <div class="stat-card">
           <h3 class="counter" data-target="73" data-suffix="+">0</h3>
-          <p>Inbound Follower Conversions</p>
+          <p>New Followers</p>
         </div>
+
         <div class="stat-card">
           <h3 class="counter" data-target="100" data-suffix="%">0</h3>
-          <p>Consistency Rate Delivered</p>
+          <p>Consistency Delivery</p>
         </div>
+
       </div>
     </section>
+
+    <!-- ABOUT -->
 
     <section id="about">
+
       <div class="about">
-        <div class="about-content">
-          <h4>The Strategy Shift</h4>
+
+        <div class="about-content reveal">
+
+          <h4>About Me</h4>
+
           <h2 class="section-title">
-            Transforming Scattered Ideas Into <span>Authority</span>
+            Turning Content Into
+            <span>Brand Authority</span>
           </h2>
+
           <p>
-            Your brand deserves more than random posts and hope-for-the-best
-            engagement models. It demands a highly structured digital footprint
-            that is crisp, perfectly timed, and calibrated to convert interest
-            into value.
+            Most brands are posting consistently but still struggling to grow.
+            The issue usually isn't effort — it's structure, positioning, and
+            clarity.
           </p>
+
           <p>
-            But running social channels solo? That is where complete management
-            overwhelm drops in. Balancing rapid editing loops, content writing
-            vectors, platform optimization audits, and modern trend-spotting
-            quickly stalls operational growth.
+            I help brands create content systems that are intentional,
+            audience-focused, and built for visibility. From content writing and
+            profile optimization to social media management, my goal is simple:
+            helping brands show up professionally and grow consistently online.
           </p>
+
           <p>
-            If you are looking at top market competitors wondering what system
-            parameters they deploy differently, the baseline answer is clear: It
-            isn't your baseline work ethic that is falling short. It is the core
-            lack of a bulletproof content system. That is exactly where my
-            expertise steps in.
+            Whether you're building a personal brand, running a business, or
+            trying to increase visibility for your services, I help simplify the
+            process and create a strategy that works long-term.
           </p>
+
         </div>
 
-        <div class="about-box">
-          <h3>Ecosystem Core Focus</h3>
-          <div class="focus-item">Social Media Architecture</div>
-          <div class="focus-item">Conversion Content Writing</div>
-          <div class="focus-item">Platform Profile Optimization</div>
-          <div class="focus-item">1-on-1 Executive Mentorship</div>
-          <div class="focus-item">Organic Lead Acquisition</div>
-          <div class="focus-item">Targeted Discovery Frameworks</div>
+        <div class="about-box reveal">
+
+          <h3>Core Focus</h3>
+
+          <div class="focus-item">Social Media Management</div>
+          <div class="focus-item">Content Writing & Strategy</div>
+          <div class="focus-item">Profile Optimization</div>
+          <div class="focus-item">Brand Positioning</div>
+          <div class="focus-item">Mentorship & Coaching</div>
+          <div class="focus-item">Personal Brand Growth</div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="services">
-      <h2 class="section-title">Core <span>Expertise</span></h2>
+    <!-- SERVICES -->
+
+    <section id="services" class="reveal">
+
+      <h2 class="section-title">
+        Services &
+        <span>Expertise</span>
+      </h2>
+
       <p class="section-subtitle">
-        Deploying data-backed operational frameworks to cleanly decouple
-        founders from platform management stress.
+        Helping brands create clear systems for growth, visibility, and
+        audience engagement.
       </p>
 
       <div class="services-grid">
+
         <div class="service-card">
-          <h3>Social Management</h3>
+          <h3>Social Media Management</h3>
+
           <p>
-            Automated multi-channel deployment calendars spanning Facebook Page
-            Dashboards, Instagram, TikTok, and LinkedIn spaces.
+            Managing content calendars, audience engagement, and multi-platform
+            posting across Instagram, LinkedIn, Facebook, and TikTok.
           </p>
         </div>
+
         <div class="service-card">
           <h3>Content Writing</h3>
+
           <p>
-            High-conversion scripting engines, storytelling frameworks,
-            emotional hooks, and structured messaging architectures.
+            Creating captions, hooks, storytelling posts, scripts, and
+            conversion-focused content tailored to your audience.
           </p>
         </div>
+
         <div class="service-card">
           <h3>Profile Optimization</h3>
+
           <p>
-            Deep-dive conversion audits designed to instantly elevate profile
-            discoverability, structural design clarity, and bio traction.
+            Improving profile clarity, positioning, and discoverability to help
+            brands look more professional online.
           </p>
         </div>
+
         <div class="service-card">
           <h3>Mentorship & Coaching</h3>
+
           <p>
-            Dedicated 1-on-1 consultation roadmaps mapping systematic branding
-            adjustments directly to overarching business targets.
+            1-on-1 guidance sessions focused on helping individuals improve
+            branding, consistency, and online growth strategy.
           </p>
         </div>
+
       </div>
+
     </section>
 
-    <section id="experience">
-      <h2 class="section-title">Professional <span>Footprint</span></h2>
+    <!-- EXPERIENCE -->
+
+    <section id="experience" class="reveal">
+
+      <h2 class="section-title">
+        Experience &
+        <span>Leadership</span>
+      </h2>
+
       <p class="section-subtitle">
-        A chronological outline of community management, strategic digital
-        coordination, and leadership.
+        A journey of digital strategy, community building, leadership, and
+        content-driven growth.
       </p>
 
       <div class="timeline">
+
         <div class="timeline-card">
+
           <div class="timeline-dot"></div>
+
           <div class="timeline-content">
-            <span class="timeline-date">2023 - PRESENT</span>
+
+            <span class="timeline-date">
+              2023 - Present
+            </span>
+
             <h3>Social Media Strategist</h3>
-            <h4>Personal Brand & Freelance Ecosystem</h4>
+
+            <h4>Personal Brand & Independent Clients</h4>
+
             <p>
-              Formulating custom, consistency-driven growth models for founders.
-              Deployed targeted, viral storytelling campaigns (such as the
-              "Chemistry" course authority post) resulting in immediate
-              multi-tiered traffic loops—securing 16,139+ organic impressions,
-              150 profile visits, and 73 incoming follower conversions within a
-              tight 48-hour display window.
+              Managing visibility strategies, content systems, and engagement
+              growth for personal brands and business-focused creators through
+              audience-centered storytelling and content planning.
             </p>
+
           </div>
+
         </div>
 
         <div class="timeline-card">
+
           <div class="timeline-dot"></div>
+
           <div class="timeline-content">
-            <span class="timeline-date">2024 - PRESENT</span>
-            <h3>Social Media Manager & Copywriter</h3>
+
+            <span class="timeline-date">
+              2024 - Present
+            </span>
+
+            <h3>Social Media Manager & Content Writer</h3>
+
             <h4>Marriage Sharper International</h4>
+
             <p>
-              Supervising global cross-platform digital outreach systems.
-              Engineering educational, faith-based, and advisory lifestyle
-              layouts to cleanly reinforce audience authority and community
-              engagement values.
+              Leading digital communication strategy, managing content
+              direction, and helping strengthen community engagement across
+              multiple social media platforms.
             </p>
+
           </div>
+
         </div>
 
         <div class="timeline-card">
+
           <div class="timeline-dot"></div>
+
           <div class="timeline-content">
-            <span class="timeline-date">3-YEAR LEADERSHIP TENURE</span>
+
+            <span class="timeline-date">
+              Leadership Experience
+            </span>
+
             <h3>Vice President & Media Coordinator</h3>
-            <h4>Baptist Student Fellowship, Iwo Baptist Association</h4>
+
+            <h4>Baptist Student Fellowship, LAUTECH</h4>
+
             <p>
-              Directed cross-functional public relations, creative design, and
-              media coordination pipelines. Managed internal communications
-              structures to maximize student visibility and community engagement
-              milestones.
+              Coordinated media communication, publicity campaigns, and team
+              management while helping increase student engagement and digital
+              visibility for fellowship activities.
             </p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <div class="container cta-container">
-      <section class="cta">
-        <h2>Stop Guessing Your Growth</h2>
+    <!-- CTA -->
+
+    <section class="reveal">
+
+      <div class="cta">
+
+        <h2>
+          Ready To Grow Your Brand?
+        </h2>
+
         <p>
-          Let's deploy a tailored, clear content systems that help brands grow
-          consistently and establish clear authority for your brand.
+          Let's create a strategy that helps your brand stand out, attract the
+          right audience, and grow with consistency.
         </p>
-        <a href="#" class="btn primary-btn">Secure Your Strategy Session</a>
-      </section>
-    </div>
+
+        <!-- ADD HER CALENDLY LINK -->
+        <a href="#contact" class="btn primary-btn">
+          Schedule a Call
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
 
     <section id="contact" style="padding-top: 40px">
       <h2 class="section-title">Let's <span>Connect</span></h2>
@@ -803,49 +948,128 @@
     </section>
 
     <footer>
-      &copy; 2026 Praiser FAWOLE. Crafted to Maximize Conversion Velocity.
+      © 2026 Praiser FAWOLE. All Rights Reserved.
     </footer>
 
     <script>
+
+      // MOBILE NAV
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+
+      // COUNTER ANIMATION
+
       const counters = document.querySelectorAll(".counter");
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const counter = entry.target;
-              const target = +counter.getAttribute("data-target");
-              const suffix = counter.getAttribute("data-suffix") || "";
-              let current = 0;
+      const counterObserver = new IntersectionObserver((entries) => {
 
-              const duration = 2000;
-              const frameRate = 1000 / 60;
-              const totalFrames = duration / frameRate;
-              const increment = target / totalFrames;
+        entries.forEach((entry) => {
 
-              const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                  counter.innerText = Math.floor(current).toLocaleString();
-                  requestAnimationFrame(updateCounter);
-                } else {
-                  counter.innerText = target.toLocaleString() + suffix;
-                }
-              };
+          if (entry.isIntersecting) {
 
-              updateCounter();
-              observer.unobserve(counter);
-            }
-          });
-        },
-        {
-          threshold: 0.25,
-        },
-      );
+            const counter = entry.target;
+
+            const target = +counter.dataset.target;
+
+            const suffix = counter.dataset.suffix || "";
+
+            let current = 0;
+
+            const increment = target / 120;
+
+            const updateCounter = () => {
+
+              current += increment;
+
+              if (current < target) {
+
+                counter.innerText =
+                  Math.floor(current).toLocaleString() + suffix;
+
+                requestAnimationFrame(updateCounter);
+
+              } else {
+
+                counter.innerText =
+                  target.toLocaleString() + suffix;
+              }
+            };
+
+            updateCounter();
+
+            counterObserver.unobserve(counter);
+          }
+        });
+
+      }, {
+        threshold: 0.4,
+      });
 
       counters.forEach((counter) => {
-        observer.observe(counter);
+        counterObserver.observe(counter);
       });
+
+
+      // SCROLL REVEAL
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+
+        });
+
+      }, {
+        threshold: 0.15,
+      });
+
+      reveals.forEach((reveal) => {
+        revealObserver.observe(reveal);
+      });
+
+
+      // ACTIVE NAV LINK
+
+      const sections = document.querySelectorAll("section");
+      const navItems = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach((section) => {
+
+          const sectionTop = section.offsetTop - 150;
+
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((link) => {
+
+          link.classList.remove("active");
+
+          if (
+            link.getAttribute("href") === "#" + current
+          ) {
+            link.classList.add("active");
+          }
+        });
+      });
+
     </script>
+
   </body>
 </html>
