@@ -483,6 +483,30 @@
         transform: translateY(0);
       }
 
+      .tools-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.tool-card{
+  padding: 22px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+
+  text-align: center;
+  font-weight: 600;
+
+  transition: 0.35s ease;
+}
+
+.tool-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
       @media (max-width: 1024px) {
         .hero,
         .about {
@@ -566,6 +590,7 @@
         <a href="#results">Results</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#tools">Tools</a>
         <a href="#experience">Experience</a>
         <a
           href="#contact"
@@ -755,6 +780,33 @@
 
     </section>
 
+    <section id="tools" class="reveal">
+
+  <h2 class="section-title">
+    Tools &
+    <span>Platforms</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Platforms and tools I use to manage content workflows,
+    scheduling, analytics, audience engagement, and brand growth.
+  </p>
+
+  <div class="tools-grid">
+
+    <div class="tool-card">Canva</div>
+    <div class="tool-card">CapCut</div>
+    <div class="tool-card">Meta Business Suite</div>
+    <div class="tool-card">LinkedIn</div>
+    <div class="tool-card">Instagram</div>
+    <div class="tool-card">TikTok</div>
+    <div class="tool-card">Notion</div>
+    <div class="tool-card">Google Workspace</div>
+
+  </div>
+
+</section>
+
     <section id="experience" class="reveal">
 
       <h2 class="section-title">
@@ -890,121 +942,117 @@
     </section>
 
     <footer>
-      © 2026 Praiser FAWOLE. All Rights Reserved.
+      © <span id="currentYear"></span> Praiser FAWOLE. All Rights Reserved.
     </footer>
 
     <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const navItems = document.querySelectorAll(".nav-links a");
+
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); 
+  navLinks.classList.toggle("active");
+});
 
 
-      const menuBtn = document.getElementById("menuBtn");
-      const navLinks = document.getElementById("navLinks");
+document.addEventListener("click", (e) => {
+  const clickedMenu = menuBtn.contains(e.target);
+  const clickedNav = navLinks.contains(e.target);
 
-      menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
+  if (!clickedMenu && !clickedNav) {
+    navLinks.classList.remove("active");
+  }
+});
 
-
-
-      const counters = document.querySelectorAll(".counter");
-
-      const counterObserver = new IntersectionObserver((entries) => {
-
-        entries.forEach((entry) => {
-
-          if (entry.isIntersecting) {
-
-            const counter = entry.target;
-
-            const target = +counter.dataset.target;
-
-            const suffix = counter.dataset.suffix || "";
-
-            let current = 0;
-
-            const increment = target / 120;
-
-            const updateCounter = () => {
-
-              current += increment;
-
-              if (current < target) {
-
-                counter.innerText =
-                  Math.floor(current).toLocaleString() + suffix;
-
-                requestAnimationFrame(updateCounter);
-
-              } else {
-
-                counter.innerText =
-                  target.toLocaleString() + suffix;
-              }
-            };
-
-            updateCounter();
-
-            counterObserver.unobserve(counter);
-          }
-        });
-
-      }, {
-        threshold: 0.4,
-      });
-
-      counters.forEach((counter) => {
-        counterObserver.observe(counter);
-      });
+navItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
 
 
-      const reveals = document.querySelectorAll(".reveal");
 
-      const revealObserver = new IntersectionObserver((entries) => {
+const counters = document.querySelectorAll(".counter");
 
-        entries.forEach((entry) => {
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
+      const counter = entry.target;
+      const target = +counter.dataset.target;
+      const suffix = counter.dataset.suffix || "";
 
-        });
+      let current = 0;
+      const increment = target / 120;
 
-      }, {
-        threshold: 0.15,
-      });
+      const updateCounter = () => {
+        current += increment;
 
-      reveals.forEach((reveal) => {
-        revealObserver.observe(reveal);
-      });
+        if (current < target) {
+          counter.innerText =
+            Math.floor(current).toLocaleString() + suffix;
+
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target.toLocaleString() + suffix;
+        }
+      };
+
+      updateCounter();
+      counterObserver.unobserve(counter);
+    });
+  },
+  { threshold: 0.4 }
+);
+
+counters.forEach((counter) => {
+  counterObserver.observe(counter);
+});
 
 
-      const sections = document.querySelectorAll("section");
-      const navItems = document.querySelectorAll(".nav-links a");
+const reveals = document.querySelectorAll(".reveal");
 
-      window.addEventListener("scroll", () => {
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-        let current = "";
+reveals.forEach((reveal) => {
+  revealObserver.observe(reveal);
+});
 
-        sections.forEach((section) => {
 
-          const sectionTop = section.offsetTop - 150;
+const sections = document.querySelectorAll("section");
 
-          if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
+window.addEventListener("scroll", () => {
+  let current = "";
 
-        navItems.forEach((link) => {
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150;
 
-          link.classList.remove("active");
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
 
-          if (
-            link.getAttribute("href") === "#" + current
-          ) {
-            link.classList.add("active");
-          }
-        });
-      });
+  navItems.forEach((link) => {
+    link.classList.remove("active");
 
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
     </script>
 
   </body>
