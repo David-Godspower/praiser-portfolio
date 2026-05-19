@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praise Esther Fawole - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2D3748;
+            background-color: #E2E8F0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Strict Single Page A4 Constraints */
+        .resume-page {
+            width: 210mm;
+            min-height: 297mm;
+            height: auto;
+            background: #FFFFFF;
+            margin: 0 auto;
+            padding: 14mm 16mm;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            border-top: 8px solid #0D9488; /* Premium Teal Accent Top Bar */
+        }
+
+        /* Center Header with Colors */
+        header {
+            text-align: center;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #F1F5F9;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 22pt;
+            letter-spacing: 0.5px;
+            color: #111827; 
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: #0D9488; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 8.5pt;
+            color: #4B5563;
+            line-height: 1.5;
+        }
+
+        .contact-info span {
+            color: #0D9488;
+            font-weight: bold;
+            padding: 0 4px;
+        }
+
+        .contact-info a {
+            color: #4B5563;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #0D9488;
+        }
+
+        /* Section Headings with Color Accents */
+        section {
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #0D9488; 
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 9pt;
+            color: #374151;
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Job Block Structural Layout */
+        .job-block {
+            margin-bottom: 8px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #1F2937;
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: #0D9488; 
+        }
+
+        .job-date {
+            font-size: 8.5pt;
+            color: #6B7280;
+            font-weight: 600;
+        }
+
+        ul {
+            margin-left: 14px;
+        }
+
+        li {
+            font-size: 9pt;
+            color: #374151;
+            margin-bottom: 2px;
+            line-height: 1.35;
+        }
+
+        /* Education Component Layout */
+        .education-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        /* Skills 3-Column Section Alignment */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 2px;
+        }
+
+        .skills-column {
+            background-color: #F8FAFC; 
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #0D9488; 
+        }
+
+        .skills-column h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            font-size: 8pt;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-column p {
+            font-size: 8.5pt;
+            color: #4B5563;
+            line-height: 1.35;
+        }
+
+        /* Anti-Ghost Page CSS Engine */
+        @media print {
+            html, body {
+                height: 100%;
+                background-color: #FFFFFF;
+                margin: 0;
+                padding: 0;
+            }
+            .resume-page {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 100%; 
+                padding: 10mm 12mm; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-page">
+        
+        <header>
+            <h1>Fawole Praise Esther</h1>
+            <div class="subtitle">Social Media Manager & Community Strategist</div>
+            <div class="contact-info">
+                +2349061226829 <span>•</span> <a href="mailto:fawoleepraisee@gmail.com">fawoleepraisee@gmail.com</a> <span>•</span> Ogbomoso, Oyo State, Nigeria<br>
+                <a href="https://twitter.com/praisefawole69013" target="_blank">Twitter</a> <span>•</span> <a href="https://www.linkedin.com/in/praiseestherfawole/" target="_blank">LinkedIn</a> <span>•</span> <a href="https://www.facebook.com/queenesther.oluwagbemisola" target="_blank">Facebook</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="about-text">
+                Creative and data-driven Social Media Manager and Content Writer with a unique blend of analytical thinking and narrative strategy. Proven track record of cultivating multi-platform online communities, managing digital visibility for personal brands, and directing communication assets for international faith-based organizations. Expert at profile optimization, short-form video framework execution, and translating organic engagements into concrete brand reach.
+            </p>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Social Media Manager & Content Creator <span class="job-company">| Personal Brand & Independent Clients</span></div>
+                    <div class="job-date">2023 – Present</div>
+                </div>
+                <ul>
+                    <li>Formulate and scale custom organic growth frameworks, engineering specialized informational, faith-based, educational, and business content.</li>
+                    <li>Sustain data-focused, consistent campaign cross-posting schedules spanning Facebook, Instagram, TikTok, and LinkedIn.</li>
+                    <li>Fostered strong audience retention and organic community development by leading active messaging loops, comments, and direct query strategies.</li>
+                    <li><strong>Measurable Achievement:</strong> Crafted an optimized LinkedIn thought-leadership piece generating <strong>7,600+ impressions</strong>, 82 direct profile visits, and 44 new followers organically within a 48-hour window.</li>
+                </ul>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Social Media Manager & Content Writer <span class="job-company">| Marriage Sharper International</span></div>
+                    <div class="job-date">2024 – Present</div>
+                </div>
+                <ul>
+                    <li>Spearhead the end-to-end digital strategy, positioning the organization as an international authority on relationship coaching and community development.</li>
+                    <li>Develop, design, and schedule high-engagement content calendars using Canva and CapCut, resulting in consistent organic community growth.</li>
+                    <li>Leverage advanced AI tools (ChatGPT) for strategic copywriting, producing high-converting hooks, video scripts, and platform-specific captions.</li>
+                    <li>Perform regular analytics tracking to monitor reach, engagement, and profile conversion rates, continuously optimizing content frameworks based on data.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Leadership & Community Impact</h2>
+            
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Vice President & Media Coordinator <span class="job-company">| Baptist Student Fellowship, Iwo Baptist Association</span></div>
+                    <div class="job-date">3-Year Tenure</div>
+                </div>
+                <ul>
+                    <li>Directed administrative operations and digital outreach for a large campus fellowship. Managed cross-functional teams to ensure alignment across graphic design, media publicity, and public relations.</li>
+                    <li>Managed community communication channels and social media presence, driving physical and virtual program attendance via strategic awareness campaigns.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Merit Scholarships</h2>
+            <div class="education-block">
+                <div>
+                    <span class="job-title">Ladoke Akintola University of Technology (LAUTECH)</span> 
+                    <span style="color: #4B5563; font-size: 9pt; font-weight: 500;">- B.Tech in Pure and Applied Chemistry</span>
+                </div>
+                <div class="job-date">2022 – 2027 (In View)</div>
+            </div>
+            <p style="font-size: 8.5pt; color: #4B5563; margin-top: 1px; line-height: 1.4;">
+                <strong>Academic Scholarships:</strong> SOSAHIB Educational Scholarship | Aipate Educational Scholarship (Awarded for outstanding academic merit and community leadership potential).
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h3>Strategy & Growth</h3>
+                    <p>Organic Growth Frameworks, Profile Optimization, Community Building, Competitor Analytics, Brand Storytelling</p>
+                </div>
+                <div class="skills-column">
+                    <h3>Content & Creation</h3>
+                    <p>Short-form Video Frameworks, Copywriting & Scriptwriting, Visual Asset Layout, Research & Analytics</p>
+                </div>
+                <div class="skills-column">
+                    <h3>Tools & Management</h3>
+                    <p>Canva, CapCut, ChatGPT, Meta Professional Dashboard & Suite Tools, TikTok, LinkedIn, WhatsApp Business</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
