@@ -21,8 +21,6 @@
         --text: #f8fafc;
         --light: #9ca3af;
         --border: rgba(255, 255, 255, 0.06);
-
-        /* Better brand color for strategist brand */
         --accent: #7c3aed;
         --accent-2: #a855f7;
 
@@ -34,7 +32,6 @@
         padding: 0;
         box-sizing: border-box;
         scroll-behavior: smooth;
-        max-width: 100%;
       }
 
       body {
@@ -92,9 +89,6 @@
         line-height: 1.8;
         margin-bottom: 60px;
       }
-
-      /* NAVBAR */
-
       nav {
         position: fixed;
         top: 0;
@@ -145,8 +139,6 @@
         cursor: pointer;
       }
 
-      /* BUTTONS */
-
       .btn {
         display: inline-flex;
         align-items: center;
@@ -183,7 +175,6 @@
         transform: translateY(-4px);
       }
 
-      /* HERO */
 
       .hero {
         min-height: 100vh;
@@ -254,8 +245,6 @@
         opacity: 0.22;
       }
 
-      /* RESULTS */
-
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -285,8 +274,6 @@
       .stat-card p {
         color: var(--light);
       }
-
-      /* ABOUT */
 
       .about {
         display: grid;
@@ -336,8 +323,6 @@
         background: var(--accent-2);
       }
 
-      /* SERVICES */
-
       .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -366,8 +351,6 @@
         color: var(--light);
         line-height: 1.8;
       }
-
-      /* EXPERIENCE */
 
       .timeline {
         position: relative;
@@ -432,9 +415,6 @@
         color: var(--light);
         line-height: 1.8;
       }
-
-      /* CTA */
-
       .cta {
         text-align: center;
         padding: 80px 40px;
@@ -462,8 +442,6 @@
         line-height: 1.9;
         color: var(--light);
       }
-
-      /* CONTACT */
 
       .contact-links {
         display: grid;
@@ -494,8 +472,6 @@
         color: #6b7280;
       }
 
-      /* SCROLL ANIMATION */
-
       .reveal {
         opacity: 0;
         transform: translateY(40px);
@@ -507,18 +483,11 @@
         transform: translateY(0);
       }
 
-      /* MOBILE */
-
       @media (max-width: 1024px) {
-        body{
-          width: 100%;
-          overflow: hidden;
-        }
         .hero,
         .about {
           grid-template-columns: 1fr;
           width: 100%;
-          overflow: hidden;
         }
 
         .hero-text {
@@ -539,13 +508,6 @@
       }
 
       @media (max-width: 768px) {
-        body{
-          width: 100%;
-        }
-        .hero, .about{
-          width: 100%;
-          overflow-x: hidden;
-        }
         section {
           padding: 90px 6%;
         }
@@ -594,7 +556,6 @@
 
   <body>
 
-    <!-- NAV -->
 
     <nav>
       <div class="logo">Praiser<span>.</span></div>
@@ -606,8 +567,6 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#experience">Experience</a>
-
-        <!-- ADD CALENDLY LINK HERE -->
         <a
           href="#contact"
           class="btn primary-btn"
@@ -617,8 +576,6 @@
         </a>
       </div>
     </nav>
-
-    <!-- HERO -->
 
     <section class="hero">
 
@@ -654,13 +611,9 @@
 
       <div class="hero-image reveal">
         <div class="glow"></div>
-
-        <!-- USE HER REAL IMAGE -->
         <img src="img/praise.png" alt="Praiser FAWOLE" />
       </div>
     </section>
-
-    <!-- RESULTS -->
 
     <section id="results" class="reveal">
       <h2 class="section-title">
@@ -696,8 +649,6 @@
 
       </div>
     </section>
-
-    <!-- ABOUT -->
 
     <section id="about">
 
@@ -749,8 +700,6 @@
       </div>
 
     </section>
-
-    <!-- SERVICES -->
 
     <section id="services" class="reveal">
 
@@ -805,8 +754,6 @@
       </div>
 
     </section>
-
-    <!-- EXPERIENCE -->
 
     <section id="experience" class="reveal">
 
@@ -882,7 +829,7 @@
 
             <h3>Vice President & Media Coordinator</h3>
 
-            <h4>Baptist Student Fellowship, LAUTECH</h4>
+            <h4>Baptist Student Fellowship, Iwo Baptist Association</h4>
 
             <p>
               Coordinated media communication, publicity campaigns, and team
@@ -898,8 +845,6 @@
 
     </section>
 
-    <!-- CTA -->
-
     <section class="reveal">
 
       <div class="cta">
@@ -913,7 +858,6 @@
           right audience, and grow with consistency.
         </p>
 
-        <!-- ADD HER CALENDLY LINK -->
         <a href="#contact" class="btn primary-btn">
           Schedule a Call
         </a>
@@ -921,8 +865,6 @@
       </div>
 
     </section>
-
-    <!-- CONTACT -->
 
     <section id="contact" style="padding-top: 40px">
       <h2 class="section-title">Let's <span>Connect</span></h2>
@@ -953,7 +895,6 @@
 
     <script>
 
-      // MOBILE NAV
 
       const menuBtn = document.getElementById("menuBtn");
       const navLinks = document.getElementById("navLinks");
@@ -963,7 +904,6 @@
       });
 
 
-      // COUNTER ANIMATION
 
       const counters = document.querySelectorAll(".counter");
 
@@ -1016,8 +956,6 @@
       });
 
 
-      // SCROLL REVEAL
-
       const reveals = document.querySelectorAll(".reveal");
 
       const revealObserver = new IntersectionObserver((entries) => {
@@ -1038,8 +976,6 @@
         revealObserver.observe(reveal);
       });
 
-
-      // ACTIVE NAV LINK
 
       const sections = document.querySelectorAll("section");
       const navItems = document.querySelectorAll(".nav-links a");
