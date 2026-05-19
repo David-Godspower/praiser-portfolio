@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praiser FAWOLE | Premium Social Media Strategist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ================= DESIGN VARIABLE TOKENS ================= */
+      :root {
+        --bg: #050505;
+        --card: #0e0e10;
+        --border: rgba(255, 255, 255, 0.05);
+        --border-glow: rgba(139, 92, 246, 0.25);
+        --text: #f8fafc;
+        --light: #94a3b8;
+        --accent: #8b5cf6; /* Royal Purple Accent */
+        --accent-glow: rgba(139, 92, 246, 0.4);
+      }
+
+      /* ================= GLOBAL RESET ================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      section {
+        padding: 120px 10%;
+        position: relative;
+      }
+
+      .section-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.8rem;
+        margin-bottom: 16px;
+        font-weight: 900;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+      }
+
+      .section-title span {
+        color: var(--accent);
+      }
+
+      .section-subtitle {
+        color: var(--light);
+        max-width: 650px;
+        line-height: 1.8;
+        margin-bottom: 60px;
+        font-size: 1.05rem;
+      }
+
+      /* ================= GLASSMORPHIC NAVBAR ================= */
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(5, 5, 5, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .nav-links a {
+        color: var(--light);
+        transition: 0.2s ease;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      /* ================= BUTTON COMPONENTS ================= */
+      .btn {
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-block;
+        text-align: center;
+      }
+
+      .primary-btn {
+        background: var(--accent);
+        color: #fff;
+        border: 1px solid transparent;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px var(--accent-glow);
+      }
+
+      .secondary-btn {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .secondary-btn:hover {
+        border-color: var(--accent);
+        color: #fff;
+        background: rgba(139, 92, 246, 0.05);
+      }
+
+      /* ================= HERO ARCHITECTURE ================= */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 60px;
+        padding-top: 140px;
+      }
+
+      .hero-text h3 {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      .hero-text h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        line-height: 1.1;
+        margin-bottom: 24px;
+        font-weight: 900;
+        letter-spacing: -1px;
+      }
+
+      .hero-text p {
+        color: var(--light);
+        line-height: 1.8;
+        margin-bottom: 35px;
+        max-width: 620px;
+        font-size: 1.05rem;
+      }
+
+      .hero-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 380px;
+        border-radius: 24px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 2;
+        filter: grayscale(10%) contrast(105%);
+      }
+
+      .glow {
+        width: 400px;
+        height: 400px;
+        background: var(--accent);
+        filter: blur(140px);
+        position: absolute;
+        opacity: 0.25;
+        z-index: 1;
+      }
+
+      /* ================= METRICS / RESULTS WITH PREMIUM HOVERS ================= */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+
+      .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 45px 35px;
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--border-glow);
+        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 25px rgba(139, 92, 246, 0.1);
+      }
+
+      .stat-card h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3.2rem;
+        color: #fff;
+        margin-bottom: 8px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .stat-card p {
+        color: var(--light);
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      /* ================= NARRATIVE ABOUT SECTION ================= */
+      .about {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .about-content h4 {
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .about p {
+        color: var(--light);
+        line-height: 1.8;
+        margin-bottom: 22px;
+        font-size: 1rem;
+        text-align: justify;
+      }
+
+      .about-box {
+        background: linear-gradient(145deg, #0e0e10 0%, #070708 100%);
+        border: 1px solid var(--border);
+        padding: 50px 40px;
+        border-radius: 24px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .about-box:hover {
+        border-color: var(--border-glow);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+
+      .about-box h3 {
+        font-family: "Montserrat", sans-serif;
+        color: #fff;
+        margin-bottom: 30px;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .focus-item {
+        margin-bottom: 16px;
+        color: var(--text);
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .focus-item::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+      }
+
+      /* ================= CORE SERVICES WITH PREMIUM HOVERS ================= */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+      }
+
+      .service-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 45px 35px;
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--border-glow);
+        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 25px rgba(139, 92, 246, 0.15);
+      }
+
+      .service-card h3 {
+        font-family: "Montserrat", sans-serif;
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+      }
+
+      .service-card:hover h3 {
+        color: #fff;
+      }
+
+      .service-card p {
+        color: var(--light);
+        line-height: 1.7;
+        font-size: 0.9rem;
+      }
+
+      /* ================= CHRONOLOGICAL TIMELINE WITH HOVERS ================= */
+      .timeline {
+        position: relative;
+        margin-top: 50px;
+        padding-left: 40px;
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .timeline-card {
+        position: relative;
+        margin-bottom: 45px;
+      }
+
+      .timeline-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        left: -46.5px;
+        top: 6px;
+        box-shadow: 0 0 15px var(--accent);
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-content {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 40px;
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-6px);
+        border-color: var(--border-glow);
+        background: linear-gradient(145deg, #121215 0%, #0e0e10 100%);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .timeline-card:hover .timeline-dot {
+        transform: scale(1.3);
+      }
+
+      .timeline-date {
+        color: var(--accent);
+        display: inline-block;
+        margin-bottom: 12px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .timeline-content h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.35rem;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+
+      .timeline-content h4 {
+        color: var(--light);
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .timeline-content p {
+        color: var(--light);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      /* ================= HIGH CONVERSION CTA ================= */
+      .cta-container {
+        padding: 60px 0;
+      }
+
+      .cta {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.08) 0%,
+          rgba(5, 5, 5, 0) 100%
+        );
+        border: 1px solid rgba(139, 92, 246, 0.15);
+        padding: 80px 40px;
+        border-radius: 28px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.4s ease;
+      }
+
+      .cta:hover {
+        border-color: rgba(139, 92, 246, 0.3);
+      }
+
+      .cta h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 900;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+
+      .cta p {
+        max-width: 620px;
+        margin: auto;
+        color: var(--light);
+        line-height: 1.7;
+        margin-bottom: 35px;
+        font-size: 1.05rem;
+      }
+
+      /* ================= CONVERTING CONTACT ENGINE ================= */
+      .contact-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 40px;
+      }
+
+      .contact-links a {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 20px;
+        border-radius: 14px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .contact-links a:hover {
+        border-color: var(--accent);
+        color: #fff;
+        transform: translateY(-4px);
+        background: rgba(139, 92, 246, 0.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ================= SYSTEM FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 40px;
+        border-top: 1px solid var(--border);
+        color: #555;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      /* ================= VIEWPORT ADAPTATION ================= */
+      @media (max-width: 1024px) {
+        .hero,
+        .about {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+        .hero-text {
+          text-align: center;
+        }
+        .hero-text p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-image {
+          order: -1;
+        }
+        .section-title {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: 80px 6%;
+        }
+        .hero-text h1 {
+          font-size: 2.6rem;
+        }
+        .cta h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Praiser<span>.</span></div>
+      <div class="nav-links">
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a
+          href="#"
+          class="btn primary-btn"
+          style="padding: 10px 20px; font-size: 0.85rem"
+          >Book Strategy Call</a
+        >
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h3>Social Media Strategist & Creator</h3>
+        <h1>Helping Brands Build Visibility & <span>Unlimited Growth</span></h1>
+        <p>
+          I help brands, coaches, entrepreneurs, and service providers transform
+          scattered content frameworks into authoritative, profit-producing
+          online operations through consistency-driven strategy execution.
+        </p>
+        <div class="btn-group" style="display: flex; gap: 20px; wrap: wrap">
+          <a href="#" class="btn primary-btn">Book a Strategy Call</a>
+          <a
+            href="https://drive.google.com/drive/folders/12BY7JqprJ7ATp8s1B6eFnH1dSCxRJOsB"
+            target="_blank"
+            class="btn secondary-btn"
+            >View Live Portfolio</a
+          >
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="glow"></div>
+        <img src="img/praise.png" alt="Praiser Fawole Portrait" />
+      </div>
+    </section>
+
+    <section id="results">
+      <h2 class="section-title">Verified <span>Results</span></h2>
+      <p class="section-subtitle">
+        Strategic placement and community engineering backed directly by clear,
+        measurable performance metrics—capturing organic traction from
+        decision-makers at prominent institutions such as
+        <strong>Cowrywise, Shopify, and Fiverr</strong>.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3 class="counter" data-target="16139" data-suffix="+">0</h3>
+          <p>Organic Impressions</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="counter" data-target="150" data-suffix="+">0</h3>
+          <p>Profile Visits Generated</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="counter" data-target="73" data-suffix="+">0</h3>
+          <p>Inbound Follower Conversions</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="counter" data-target="100" data-suffix="%">0</h3>
+          <p>Consistency Rate Delivered</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <div class="about-content">
+          <h4>The Strategy Shift</h4>
+          <h2 class="section-title">
+            Transforming Scattered Ideas Into <span>Authority</span>
+          </h2>
+          <p>
+            Your brand deserves more than random posts and hope-for-the-best
+            engagement models. It demands a highly structured digital footprint
+            that is crisp, perfectly timed, and calibrated to convert interest
+            into value.
+          </p>
+          <p>
+            But running social channels solo? That is where complete management
+            overwhelm drops in. Balancing rapid editing loops, content writing
+            vectors, platform optimization audits, and modern trend-spotting
+            quickly stalls operational growth.
+          </p>
+          <p>
+            If you are looking at top market competitors wondering what system
+            parameters they deploy differently, the baseline answer is clear: It
+            isn't your baseline work ethic that is falling short. It is the core
+            lack of a bulletproof content system. That is exactly where my
+            expertise steps in.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>Ecosystem Core Focus</h3>
+          <div class="focus-item">Social Media Architecture</div>
+          <div class="focus-item">Conversion Content Writing</div>
+          <div class="focus-item">Platform Profile Optimization</div>
+          <div class="focus-item">1-on-1 Executive Mentorship</div>
+          <div class="focus-item">Organic Lead Acquisition</div>
+          <div class="focus-item">Targeted Discovery Frameworks</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Core <span>Expertise</span></h2>
+      <p class="section-subtitle">
+        Deploying data-backed operational frameworks to cleanly decouple
+        founders from platform management stress.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Social Management</h3>
+          <p>
+            Automated multi-channel deployment calendars spanning Facebook Page
+            Dashboards, Instagram, TikTok, and LinkedIn spaces.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Content Writing</h3>
+          <p>
+            High-conversion scripting engines, storytelling frameworks,
+            emotional hooks, and structured messaging architectures.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Profile Optimization</h3>
+          <p>
+            Deep-dive conversion audits designed to instantly elevate profile
+            discoverability, structural design clarity, and bio traction.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Mentorship & Coaching</h3>
+          <p>
+            Dedicated 1-on-1 consultation roadmaps mapping systematic branding
+            adjustments directly to overarching business targets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Professional <span>Footprint</span></h2>
+      <p class="section-subtitle">
+        A chronological outline of community management, strategic digital
+        coordination, and leadership.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 - PRESENT</span>
+            <h3>Social Media Strategist</h3>
+            <h4>Personal Brand & Freelance Ecosystem</h4>
+            <p>
+              Formulating custom, consistency-driven growth models for founders.
+              Deployed targeted, viral storytelling campaigns (such as the
+              "Chemistry" course authority post) resulting in immediate
+              multi-tiered traffic loops—securing 16,139+ organic impressions,
+              150 profile visits, and 73 incoming follower conversions within a
+              tight 48-hour display window.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 - PRESENT</span>
+            <h3>Social Media Manager & Copywriter</h3>
+            <h4>Marriage Sharper International</h4>
+            <p>
+              Supervising global cross-platform digital outreach systems.
+              Engineering educational, faith-based, and advisory lifestyle
+              layouts to cleanly reinforce audience authority and community
+              engagement values.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">3-YEAR LEADERSHIP TENURE</span>
+            <h3>Vice President & Media Coordinator</h3>
+            <h4>Baptist Student Fellowship, Iwo Baptist Association</h4>
+            <p>
+              Directed cross-functional public relations, creative design, and
+              media coordination pipelines. Managed internal communications
+              structures to maximize student visibility and community engagement
+              milestones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container cta-container">
+      <section class="cta">
+        <h2>Stop Guessing Your Growth</h2>
+        <p>
+          Let's deploy a tailored, clear content systems that help brands grow
+          consistently and establish clear authority for your brand.
+        </p>
+        <a href="#" class="btn primary-btn">Secure Your Strategy Session</a>
+      </section>
+    </div>
+
+    <section id="contact" style="padding-top: 40px">
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <p class="section-subtitle">
+        Select your preferred communication network to initiate operational
+        deployment channels.
+      </p>
+
+      <div class="contact-links">
+        <a
+          href="https://www.linkedin.com/in/praiseestherfawole/"
+          target="_blank"
+          >LinkedIn Profile</a
+        >
+        <a href="mailto:praiseoluwagbemisolafawole@gmail.com">Direct Email</a>
+        <a
+          href="https://www.facebook.com/queenesther.oluwagbemisola"
+          target="_blank"
+          >Facebook Channel</a
+        >
+        <a href="tel:07018343027">Call: 07018343027</a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Praiser FAWOLE. Crafted to Maximize Conversion Velocity.
+    </footer>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = +counter.getAttribute("data-target");
+              const suffix = counter.getAttribute("data-suffix") || "";
+              let current = 0;
+
+              const duration = 2000;
+              const frameRate = 1000 / 60;
+              const totalFrames = duration / frameRate;
+              const increment = target / totalFrames;
+
+              const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                  counter.innerText = Math.floor(current).toLocaleString();
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  counter.innerText = target.toLocaleString() + suffix;
+                }
+              };
+
+              updateCounter();
+              observer.unobserve(counter);
+            }
+          });
+        },
+        {
+          threshold: 0.25,
+        },
+      );
+
+      counters.forEach((counter) => {
+        observer.observe(counter);
+      });
+    </script>
+  </body>
+</html>
