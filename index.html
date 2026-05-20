@@ -71,6 +71,8 @@
         z-index: -1;
       }
 
+      
+
       a {
         text-decoration: none;
         color: inherit;
@@ -486,12 +488,28 @@
         transform: translateY(-6px);
         border-color: rgba(168, 85, 247, 0.35);
       }
-
       footer {
-        padding: 40px;
+        padding: 40px 20px;
         text-align: center;
         border-top: 1px solid var(--border);
         color: #6b7280;
+      }
+
+      .developer-tag {
+        margin-top: 12px;
+        font-size: 0.95rem;
+        font-style: italic;
+        opacity: 0.95;
+      }
+
+      footer a {
+        color: var(--accent-2);
+        font-weight: 600;
+        transition: 0.3s ease;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
 
       .reveal {
@@ -1179,7 +1197,9 @@
     </section>
 
     <footer>
-      © <span id="currentYear"></span> Praiser FAWOLE. All Rights Reserved.
+      <p>© <span id="currentYear"></span> Praiser FAWOLE. All Rights Reserved.</p>
+      <p class="developer-tag">Designed &  Developed by <a href="https://davidgodspowerajala.me/" target="_blank" rel="noopener noreferrer"> David Godspower Ajala (D.G.A.)</a>
+      </p>
     </footer>
 
     <script>
