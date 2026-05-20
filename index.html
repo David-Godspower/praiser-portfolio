@@ -131,6 +131,11 @@
         color: var(--accent-2);
       }
 
+      .logo:hover{
+        cursor: pointer;
+        text-decoration: 0 15px 30px rgba(168, 85, 247, 0.25);
+      }
+
       .nav-links {
         display: flex;
         gap: 35px;
@@ -660,7 +665,9 @@
   <body>
 
     <nav>
-      <div class="logo">Praiser<span>.</span></div>
+      <div class="logo">
+        <a href="#" onclick="window.location.reload(); return false;">Praiser</a><span>.</span>
+      </div>
 
       <div class="menu-btn" id="menuBtn">☰</div>
 
