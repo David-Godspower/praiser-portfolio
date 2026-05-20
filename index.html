@@ -576,6 +576,97 @@
         font-size: 0.92rem;
       }
 
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 30px;
+      }
+
+      .portfolio-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(168, 85, 247, 0.35);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .portfolio-img-container {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        border-bottom: 1px solid var(--border);
+        background: #ffffff; 
+      }
+
+      .portfolio-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top; 
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-card:hover .portfolio-img-container img {
+        transform: scale(1.05); 
+      }
+
+      .portfolio-info {
+        padding: 25px;
+      }
+
+      .portfolio-tag {
+        color: var(--accent-2);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+      .portfolio-info h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-info p {
+        color: var(--light);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 1150px) {
+        .menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 85px;
+          right: 6%;
+          width: 250px;
+          background: #111114;
+          border: 1px solid var(--border);
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 25px;
+          border-radius: 18px;
+          display: none;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+      }
+
       @media (max-width: 1024px) {
         .hero,
         .about {
@@ -599,37 +690,9 @@
           font-size: 3.2rem;
         }
       }
-
       @media (max-width: 768px) {
         section {
           padding: 90px 6%;
-        }
-
-        .menu-btn {
-          display: block;
-        }
-
-        .nav-links {
-          position: absolute;
-          top: 85px;
-          right: 6%;
-          width: 250px;
-
-          background: #111114;
-          border: 1px solid var(--border);
-
-          flex-direction: column;
-          align-items: flex-start;
-
-          padding: 25px;
-
-          border-radius: 18px;
-
-          display: none;
-        }
-
-        .nav-links.active {
-          display: flex;
         }
 
         .hero-text h1 {
@@ -676,7 +739,8 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#tools">Tools</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#portfolio">Frameworks</a>
+        <a href="#testimonials">Feedback</a>
         <a href="#experience">Experience</a>
         <a
           href="#contact"
@@ -691,7 +755,7 @@
     <section class="hero">
 
       <div class="hero-text reveal">
-        <h3>Social Media Strategist & Content Writer</h3>
+        <h3>Praiser Fawole • Social Media Strategist & Content Writer</h3>
 
         <h1>
           Helping Brands Build
@@ -892,6 +956,53 @@
 
     </section>
 
+    <section id="portfolio" class="reveal">
+      <h2 class="section-title">
+        Strategic <span>Frameworks</span>
+      </h2>
+
+      <p class="section-subtitle">
+        A look inside the data-driven content calendars, platform-specific strategies, and messaging architectures I build for brands.
+      </p>
+
+      <div class="portfolio-grid">
+        
+        <div class="portfolio-card">
+          <div class="portfolio-img-container">
+            <img src="img/LinkedIn.png" alt="LinkedIn Content Strategy Table" />
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">Thought Leadership</span>
+            <h3>LinkedIn Content Architecture</h3>
+            <p>A structured weekly content plan designed to establish founder authority, driving deep conversations through faith-based reflections and industry insights.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-img-container">
+            <img src="img/Tiktok.png" alt="TikTok Content Strategy Table" />
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">Video Strategy</span>
+            <h3>Short-Form Video Planning</h3>
+            <p>Comprehensive TikTok frameworks mapping out hooks, video formats (talking head vs. voice-over), and targeted call-to-actions for maximum reach.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-img-container">
+            <img src="img/Instagram.png" alt="Instagram Content Strategy Table" />
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">Visual & Video Strategy</span>
+            <h3>Instagram Content Ecosystem</h3>
+            <p>Multi-format content cycles combining educational carousels, engaging Reels, and static posts designed to drive saves, shares, and community polls.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
     <section id="testimonials" class="reveal">
 
       <h2 class="section-title">
