@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/praise.png" />
     
     <style>
         
@@ -20,7 +21,7 @@
             font-family: 'Inter', sans-serif;
             color: #2D3748;
             background-color: #E2E8F0;
-            padding: 20px 0;
+            padding: 0;
             display: flex;
             justify-content: center;
         }
@@ -28,22 +29,23 @@
         
         .resume-page {
             width: 210mm;
-            min-height: 297mm;
-            height: auto;
+            height: 297mm;
+            max-height: 297mm;
             background: #FFFFFF;
             margin: 0 auto;
-            padding: 14mm 16mm;
+            padding: 12mm 15mm;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             border-top: 8px solid #0D9488; 
+            overflow: hidden;
         }
 
         
         header {
             text-align: center;
             padding-bottom: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #F1F5F9;
         }
 
@@ -91,7 +93,7 @@
 
         
         section {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         h2 {
@@ -110,7 +112,7 @@
             font-size: 9pt;
             color: #374151;
             text-align: justify;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         
@@ -150,7 +152,7 @@
             font-size: 9pt;
             color: #374151;
             margin-bottom: 2px;
-            line-height: 1.35;
+            line-height: 1.3;
         }
 
         
@@ -192,21 +194,30 @@
         }
 
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
             html, body {
+                width: 210mm;
                 height: 100%;
                 background-color: #FFFFFF;
                 margin: 0;
                 padding: 0;
+                overflow: hidden;
             }
             .resume-page {
                 box-shadow: none;
                 margin: 0;
                 width: 210mm;
-                height: 100%; 
+                height: 297mm; 
+                max-height: 297mm;
                 padding: 10mm 12mm; 
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact;
                 page-break-after: avoid;
+                page-break-inside: avoid;
+                overflow: hidden;
             }
         }
     </style>
@@ -237,13 +248,13 @@
             <div class="job-block">
                 <div class="job-header">
                     <div class="job-title">Social Media Manager & Content Creator <span class="job-company">| Personal Brand & Independent Clients</span></div>
-                    <div class="job-date">2023 – Present</div>
+                    <div class="job-date">2024 – Present</div>
                 </div>
                 <ul>
                     <li>Formulate and scale custom organic growth frameworks, engineering specialized informational, faith-based, educational, and business content.</li>
                     <li>Sustain data-focused, consistent campaign cross-posting schedules spanning Facebook, Instagram, TikTok, and LinkedIn.</li>
                     <li>Fostered strong audience retention and organic community development by leading active messaging loops, comments, and direct query strategies.</li>
-                    <li><strong>Measurable Achievement:</strong> Crafted an optimized LinkedIn thought-leadership piece generating <strong>7,600+ impressions</strong>, 82 direct profile visits, and 44 new followers organically within a 48-hour window.</li>
+                    <li><strong>Measurable Achievement:</strong> Crafted an optimized LinkedIn thought-leadership piece generating <strong>7,600+ impressions</strong>,<strong> 82 direct profile visits</strong>, and <strong>44 new followers </strong> within <strong>a 48-hour window</strong>.</li>
                 </ul>
             </div>
 
